@@ -94,6 +94,7 @@ body{
 .menu #watchlist li{
     background-color: transparent !important;
     color: #fdfdfd;
+    font-size: larger;
 }
 
 .display-area{
@@ -103,12 +104,49 @@ body{
 
 #display-card{
     background-color: #fdfdfd;
+    display: block;
     padding: 40px;
-    width:fit-content;
+    width: fit-content;
 }
 
-#movie-info{
+#anime-info{
     display: flex;
-
+    justify-content: center;
 }
 
+#anime-info .poster{
+    padding-right: 20px;
+    width: fit-content;
+    height: fit-content;
+}
+
+#title, #jap-title{
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#title{
+    padding-top: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#jap-title{
+    /* padding-top: 5px; */
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.right-side{
+    height: auto;
+}
+
+.comments-section{
+    margin-top: 20px;
+    width: 100%;
+}
