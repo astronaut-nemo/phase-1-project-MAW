@@ -104,5 +104,11 @@ body{
 #display-card{
     background-color: #fdfdfd;
     padding: 40px;
+    width:fit-content;
+}
+
+#movie-info{
+    display: flex;
+
 }
 
