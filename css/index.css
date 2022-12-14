@@ -19,6 +19,7 @@ body{
     height: auto;
 }
 
+/* HEADER */
 .header{
     position: relative;
     background-color: #5a2a99;
@@ -69,6 +70,7 @@ body{
     display: none;
 }
 
+/* BODY */
 #body{
     position: relative;
     padding: 0 !important;
@@ -78,6 +80,7 @@ body{
     background-color: #151515;
 }
 
+/* MENU */
 .menu{
     background-color: #5a2a99;
     color: #fdfdfd;
@@ -97,6 +100,7 @@ body{
     font-size: larger;
 }
 
+/* DISPLAY AREA */
 .display-area{
     height: auto;
     padding: 40px !important;
@@ -109,15 +113,22 @@ body{
     width: fit-content;
 }
 
+/* ANIME INFO */
 #anime-info{
     display: flex;
     justify-content: center;
 }
 
+/* LHS OF DISPLAY CARD */
 #anime-info .poster{
     padding-right: 20px;
     width: fit-content;
     height: fit-content;
+}
+
+/* RHS OF DISPLAY CARD */
+.right-side{
+    height: auto;
 }
 
 #title, #jap-title{
@@ -142,11 +153,29 @@ body{
     font-weight: 600;
 }
 
-.right-side{
-    height: auto;
+/* ACTION BUTTONS */
+#add-btn, #comment-btn{
+    /* display: flex; */
+    padding: 5px;
+    margin: 5px;
 }
 
+#add-btn{
+    background-color: #ff4b33;
+    color: #fdfdfd;
+}
+
+#comment-btn{
+    background-color: #151515;
+    color: #fdfdfd;
+}
+
+/* COMMENTS SECTION */
 .comments-section{
     margin-top: 20px;
     width: 100%;
+}
+
+.comments-section h6{
+    font-size: 20px;
 }

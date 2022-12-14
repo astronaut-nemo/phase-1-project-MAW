@@ -70,9 +70,10 @@
 
                         <!-- Anime Title and Synopsis -->
                         <div class="right-side col-lg-8">
-                            <div class="anime-info">
-                                <h3 id="title">[ANIME TITLE]</h3>
-                                <p id="jap-title" >[TITLE JAPANESE]</p>
+                            <!-- Information About the Anime -->
+                            <div class="anime-content">
+                                <h3 id="title">[ENG. ANIME TITLE]</h3>
+                                <p id="jap-title" >[JAPANESE TITLE]</p>
                                 <!-- Possible things to include: status, duration, rating, year -->
                                 <div class="synopsis">
                                     <h4>Synopsis</h4>
@@ -84,8 +85,8 @@
                             
                             <!-- Action Buttons -->
                             <div class="action-btns">
-                                <button class="btn btn-danger">Add to Watchlist</button>
-                                <button class="btn btn-dark">Add Comment</button>
+                                <button id="add-btn" class="btn">Add to Watchlist</button>
+                                <button id="comment-btn" class="btn btn-dark">Add Comment</button>
                             </div>
                             
                         </div>
@@ -95,8 +96,11 @@
                     <div class="comments-section">
                         <h6>Comments</h6>
                         <ul id="comments-list" class="list-group ">
-                            <li class="comment list-group-item">Comment about this anime and how it made me feel</li>
-                            <button class="btn btn-primary" ><i class="fa-solid fa-trash-can"></i></button>
+                            <li class="comment list-group-item">
+                                Comment about this anime and how it made me feel
+                                <button class="btn btn-primary" ><i class="fa-solid fa-trash-can"></i></button>
+                            </li>
+                            
 
                             <li class="comment list-group-item">Comment about this anime and how it made me feel</li>
                             <button class="btn btn-primary" ><i class="fa-solid fa-trash-can"></i></button>
