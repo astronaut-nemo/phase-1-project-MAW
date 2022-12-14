@@ -16,30 +16,48 @@
         <div class="header container-fluid">
             <p class="site-title">My Anime Watchlist</p>
 
-            <div class="header-bg">
-             <!-- Search Bar -->
-             <div id="search-bar" class="input-group mb-3">
-                <!-- Input Field -->
-                <input type="text" class="form-control" placeholder="Search anime by title" aria-label="Search anime by title" aria-describedby="basic-addon2">
-                <!-- Search Button -->
-                <div class="input-group-append">
-                  <button id="search-btn" class="btn btn-dark" type="button">Search</button>
+            <div class="header-bg container-fluid">
+                <div class="search-bar-header">
+                    <!-- Search Bar -->
+                    <div id="search-bar" class="input-group mb-3">
+                        <!-- Input Field -->
+                        <input type="text" class="form-control" placeholder="Search anime by title" aria-label="Search anime by title" aria-describedby="basic-addon2">
+                        <!-- Search Button -->
+                        <div class="input-group-append">
+                        <button id="search-btn" class="btn btn-dark" type="button">Search</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <!-- Search Results Display -->
-            <!-- <div id="search-results">
-                RESULTS
-            </div> -->
-            </div>
-            
+                
+                <!-- Search Results Display -->
+                <div id="search-results" class="container-fluid">
+                    <img src="https://via.placeholder.com/150"/>
+                    <img src="https://via.placeholder.com/150"/>
+                    <img src="https://via.placeholder.com/150"/>
+                </div>
+            </div>  
         </div>
-<!-- FINISH HEADER THEN COMMIT -->
 
-        <!-- Watchlist Menu -->
-        <!-- Use Semantic menus https://semantic-ui.com/collections/menu.html#evenly-divided -->
+        <!-- Main Body -->
+        <div id="body" class="container-fluid">
+            <!-- Watchlist Menu -->
+            <div class="menu col-md-4 g-3">
+                <h3>Your Watchlist</h3>
+                <ul id="watchlist" class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-dark" >Anime title 1</li>
+                    <li class="list-group-item" >Anime title 2</li>
+                    <li class="list-group-item" >Anime title 3</li>
+                </ul>
+            </div>
 
-        <!-- Display Area -->
+            <!-- Display Area -->
+            <div id="display-area col-md-8 g-3 container-fluid">
+                <div class="details">
+                    Some stuff about the anime ahsuhdouasudoasdonaosdnoan
+                </div>
+            </div>
+        </div>
+        
 
     </div>
 
