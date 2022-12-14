@@ -81,11 +81,11 @@ body{
 }
 
 /* MENU */
+/* Old menu */
 .menu{
     background-color: #5a2a99;
     color: #fdfdfd;
 }
-
 .menu h3{
     display: none;
     padding: 10px;
@@ -94,10 +94,17 @@ body{
     font-family: 'Roboto';
 }
 
-.menu #watchlist li{
-    background-color: transparent !important;
+
+/* New Menu */
+#watchlist li{
     color: #fdfdfd;
     font-size: larger;
+}
+
+#watchlist{
+    width: 100%;
+    margin: 0;
+    background-color: #7d51b6;
 }
 
 /* DISPLAY AREA */

@@ -5,11 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Anime Watchlist</title>
+
+    <!-- CSS Style Sheets -->
     <!-- Linking custom CSS -->
     <link href="./css/index.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
     <!-- Linking Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Linking Semantic-UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/menu.min.css" integrity="sha512-vzV6GDUGaQ3ern46f/02MP4pQhI5Fs4z4dN+0pSNiD4zuPE6Aaxzj9o8ZPTSTIQOBEI3H8wO1V8qV1bQbZcGzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Linking FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
@@ -49,11 +53,22 @@
             <!-- Watchlist Menu -->
             <div class="menu col-md-4 g-3">
                 <h3>Your Watchlist</h3>
-                <ul id="watchlist" class="list-group list-group-flush">
+                <!-- <ul id="watchlist" class="list-group list-group-flush">
                     <li class="list-group-item list-group-item-dark" >Anime title 1</li>
                     <li class="list-group-item" >Anime title 2</li>
                     <li class="list-group-item" >Anime title 3</li>
-                </ul>
+                </ul> -->
+                <div id="watchlist" class="ui vertical pointing menu">
+                    <li class="item active">
+                      Anime Title 1
+                    </li>
+                    <li class="item">
+                      Anime Title 2
+                    </li>
+                    <li class="item">
+                      Anime Title 3
+                    </li>
+                  </div>
             </div>
 
             <!-- Display Area -->
@@ -94,6 +109,7 @@
                     
                     <!-- Comments Section -->
                     <div class="comments-section">
+                        <!-- Add a form for creating comments -->
                         <h6>Comments</h6>
                         <ul id="comments-list" class="list-group ">
                             <li class="comment list-group-item">
