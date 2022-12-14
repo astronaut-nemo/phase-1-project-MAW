@@ -156,7 +156,7 @@ body{
 /* ACTION BUTTONS */
 #add-btn, #comment-btn{
     /* display: flex; */
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
 }
 
@@ -164,9 +164,17 @@ body{
     background-color: #ff4b33;
     color: #fdfdfd;
 }
+#add-btn:hover{
+    background-color: #eb270d;
+    color: #fdfdfd;
+}
 
 #comment-btn{
     background-color: #151515;
+    color: #fdfdfd;
+}
+#comment-btn:hover{
+    background-color: #060606;
     color: #fdfdfd;
 }
 
@@ -178,4 +186,25 @@ body{
 
 .comments-section h6{
     font-size: 20px;
+    text-transform: uppercase;
+}
+
+.comment{
+    /* background-color: #060606 !important; */
+    display: inline-flex !important;
+    justify-content: space-between;
+}
+
+.comment span{
+    margin: 10px;
+}
+
+.delete-btn{
+    margin-inline: 20px;
+    background-color: #ff4b33 !important;
+    border: #ff4b33 !important;
+}
+#delete-btn:hover{
+    background-color: #060606 !important;
+    color: #fdfdfd;
 }
