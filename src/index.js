@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Event Listeners */
     addToWLBtn.addEventListener('click', () => addToWatchlist());
+    const randomBtn = document.getElementById('random-btn');
+    randomBtn.addEventListener('click', () => fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw'))
 
     disableWatchlistItems();
     populateWatchlist();

@@ -54,6 +54,7 @@ body{
 
 .search-bar-header{
     padding-top: 80px;
+    padding-bottom: 30px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -85,7 +86,7 @@ body{
 
 /* MENU */
 .menu h3{
-    /* display: none; */
+    display: none;
     padding: 10px;
     margin: 0;
     text-align: center;
@@ -105,6 +106,7 @@ body{
     width: 100%;
     margin: 0;
     margin-left: 20px;
+    margin-top: 40px;
     background-color: #5a2a99;
 }
 
