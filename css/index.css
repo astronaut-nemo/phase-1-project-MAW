@@ -54,7 +54,6 @@ body{
 
 .search-bar-header{
     padding-top: 80px;
-    padding-bottom: 5%;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -65,9 +64,9 @@ body{
 }
 
 #search-results{
-    padding: 10px;
+    padding: 20px;
     display: inline-block;
-    display: none;
+    /* display: none; */
 }
 
 /* BODY */
@@ -93,8 +92,6 @@ body{
     color: transparent;
 }
 
-
-/* New Menu */
 #watchlist li{
     color: #fdfdfd;
     font-size: larger;
