@@ -81,7 +81,7 @@ function displayFromLocalOnCard(animeData){
     const animeSynopsis = document.getElementById('anime-synopsis');
     animeSynopsis.innerText = animeData.animeSynopsis;
 
-    // Display buttons
+    // Actions buttons
     addToWLBtn.setAttribute('disabled', true)
     console.log(addToWLBtn)
 }
