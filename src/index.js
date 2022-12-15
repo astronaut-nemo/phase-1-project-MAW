@@ -2,20 +2,20 @@
 let isOnWatchlist = false;
 const addToWLBtn = document.getElementById('add-btn');
 
-// DOM Content Loaded
+/* INITIAL RENDER */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('page loaded')
     /* Event Listeners */
     addToWLBtn.addEventListener('click', () => addToWatchlist());
 
-    /* Function Calls */
     disableWatchlistItems();
 
-    /* Fetch Commands */
-    // Fetch Cowboy Bebop and display on site load
+    // Fetch and display Cowboy Bebop
     // fetchFromJikan('https://api.jikan.moe/v4/anime/1')
 
-    fetchFromLocal('http://localhost:3000/watchlist/2')
+    // Fetch and display an anime from the watchlist 
+    fetchFromLocal('http://localhost:3000/watchlist/1')
+    populateWatchlist();
 })
 
 /* FETCH REQUESTS */
@@ -56,7 +56,7 @@ function displayFromJikanOnCard(animeData){
 }
 
 function displayFromLocalOnCard(animeData){
-    console.log(animeData)
+    // console.log(animeData)
     /* POSTER SIDE */
     // Set #anime-poster
     const animePoster = document.getElementById('anime-poster');
@@ -79,13 +79,35 @@ function displayFromLocalOnCard(animeData){
 
 // Watchlist Manipulation
 function populateWatchlist(){
-    // Check db.json and update each list item based on the watchlist content
+    // Check db.json and create each list item based on the watchlist content
+    fetch('http://localhost:3000/watchlist/')
+    .then((response) => response.json())
+    .then((data) => data.forEach(anime => createWatchlistItem(anime)))
 }
 
 function addToWatchlist(){
     // Create list item
     disableWatchlistItems();
-    createWatchlistItem();
+
+    // Create list item that uses the CSS selectors and has the structure of a list item
+    const listItem = document.createElement('li');
+    listItem.setAttribute('id', document.getElementById('title').getAttribute('alt'));
+
+    listItem.addEventListener('click', ()=> {
+        // Set this list item active and disable others
+        disableWatchlistItems()
+        listItem.setAttribute('class', 'item active');
+
+        // Display the anime's information
+        // Fetch from local db, then call displayOnCard based on id
+        // fetchFromLocal(`http://localhost:3000/watchlist/`)
+    })
+
+    
+    listItem.setAttribute('class', 'item active');
+    listItem.innerText = document.getElementById('title').innerText;
+
+    (document.getElementById('watchlist')).appendChild(listItem);
 
     // Create object of information to store
     const animeDetails = {
@@ -107,9 +129,10 @@ function addToWatchlist(){
     // .then((response) => response.json()).then((data) => console.log(data))
 }
 
-function createWatchlistItem(){
+function createWatchlistItem(anime){
     // Create list item that uses the CSS selectors and has the structure of a list item
     const listItem = document.createElement('li');
+    listItem.setAttribute('id', anime.id);
 
     listItem.addEventListener('click', ()=> {
         // Set this list item active and disable others
@@ -117,13 +140,12 @@ function createWatchlistItem(){
         listItem.setAttribute('class', 'item active');
 
         // Display the anime's information
-        // Fetch from local db, then call displayOnCard based on id
-
+        fetchFromLocal(`http://localhost:3000/watchlist/${listItem.getAttribute('id')}`)
     })
 
-    listItem.setAttribute('id', document.getElementById('title').getAttribute('alt'));
-    listItem.setAttribute('class', 'item active');
-    listItem.innerText = document.getElementById('title').innerText;
+    
+    listItem.setAttribute('class', 'item');
+    listItem.innerText = anime.animeTitle;
 
     (document.getElementById('watchlist')).appendChild(listItem);
 }
