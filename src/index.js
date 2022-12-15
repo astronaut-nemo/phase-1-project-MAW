@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     disableWatchlistItems();
 
     // Fetch and display Cowboy Bebop
-    // fetchFromJikan('https://api.jikan.moe/v4/anime/1')
+    fetchFromJikan('https://api.jikan.moe/v4/random/anime?&sfw')
 
     // Fetch and display an anime from the watchlist 
-    fetchFromLocal('http://localhost:3000/watchlist/1')
+    // fetchFromLocal('http://localhost:3000/watchlist/1')
     populateWatchlist();
 })
 
@@ -86,7 +86,6 @@ function populateWatchlist(){
 }
 
 function addToWatchlist(){
-    // Create list item
     disableWatchlistItems();
 
     // Create list item that uses the CSS selectors and has the structure of a list item
