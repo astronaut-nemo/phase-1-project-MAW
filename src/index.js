@@ -11,15 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Event Listeners */
     document.getElementById('random-btn').addEventListener('click', () => fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw'))
     addToWLBtn.addEventListener('click', () => addToWatchlist());
-    removeFromWLBtn.addEventListener('click', () => console.log('REmove that ANIME!!!'))    
+    removeFromWLBtn.addEventListener('click', () => removeFromWatchlist());    
 
     disableWatchlistItems();
     populateWatchlist();
 
     // Fetch and display random anime
-    fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw')
-
+    fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw');
 })
+
 
 /* FETCH REQUESTS */
 function fetchFromJikan(URL){
@@ -33,6 +33,18 @@ function fetchFromLocal(URL){
     .then((response) => response.json())
     .then((data) => displayFromLocalOnCard(data));
 }
+
+function deleteFromLocal(id){
+    // POST request to local server (save only the information you display)
+    fetch(`http://localhost:3000/watchlist/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+    })
+}
+
 
 /* DOM MANIPULATION*/
 /* Display Card Manipulation */
@@ -89,6 +101,7 @@ function displayFromLocalOnCard(animeData){
     removeFromWLBtn.style.display = "";
 }
 
+
 /* Watchlist Manipulation */
 function populateWatchlist(){
     // Check db.json and create each list item based on the watchlist content
@@ -120,6 +133,14 @@ function addToWatchlist(){
     })
 
     populateWatchlist();
+}
+
+function removeFromWatchlist(){
+    const deleteId = document.getElementById('title').getAttribute('alt');
+
+    // Delete Request
+    deleteFromLocal(deleteId);
+    // populateWatchlist();
 }
 
 function createWatchlistItem(anime){
