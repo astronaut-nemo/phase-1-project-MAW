@@ -49,17 +49,37 @@ function addToWatchlist(){
     // POST request to local server
 
     // Create list item
+    disableWatchlistItems();
+    createWatchlistItem();
+}
+
+function createWatchlistItem(){
     // Create list item that uses the CSS selectors and has the structure of a list item
     const listItem = document.createElement('li');
 
+    listItem.addEventListener('click', ()=> {
+        // Set this list item active and disable others
+        disableWatchlistItems()
+        listItem.setAttribute('class', 'item active');
+
+        // Display the anime's information
+
+        console.log(listItem)
+    })
+
+    listItem.setAttribute('id', document.getElementById('title').getAttribute('alt'));
     listItem.setAttribute('class', 'item active');
     listItem.innerText = document.getElementById('title').innerText;
     // listItem.innerText = capitaliseFirstLetter(document.getElementById('title').innerText);
 
+
     (document.getElementById('watchlist')).appendChild(listItem);
-    isOnWatchlist = true;
 }
 
+// Disable all the watchlist items
+function disableWatchlistItems(){
+    Array.from(document.getElementsByClassName('item')).forEach(item => console.log(item.setAttribute('class', 'item')))
+}
 // Capitalise only the first letter of every word in the title
 // function capitaliseFirstLetter(string){
 //     const capitalisedString = string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
