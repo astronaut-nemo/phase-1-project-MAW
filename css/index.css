@@ -168,7 +168,7 @@ body{
 }
 
 /* ACTION BUTTONS */
-#add-btn, #comment-btn{
+#add-btn, #comment-btn, #random-btn, #search-btn{
     /* display: flex; */
     padding: 10px;
     margin: 5px;
@@ -189,6 +189,15 @@ body{
 }
 #comment-btn:hover{
     background-color: #060606;
+    color: #fdfdfd;
+}
+
+#random-btn{
+    background-color: #5a2a99;
+    color: #fdfdfd;
+}
+#random-btn:hover{
+    background-color: #9a66dd;
     color: #fdfdfd;
 }
 
