@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Event Listeners */
     addToWLBtn.addEventListener('click', () => addToWatchlist());
-    const randomBtn = document.getElementById('random-btn');
-    randomBtn.addEventListener('click', () => fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw'))
+    document.getElementById('random-btn').addEventListener('click', () => fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw'))
 
     disableWatchlistItems();
     populateWatchlist();
@@ -56,7 +55,8 @@ function displayFromJikanOnCard(animeData){
     const animeSynopsis = document.getElementById('anime-synopsis');
     animeSynopsis.innerText = animeData.synopsis;
 
-    // Display buttons
+    // Action buttons
+    addToWLBtn.removeAttribute('disabled')
 
 }
 
@@ -82,15 +82,8 @@ function displayFromLocalOnCard(animeData){
     animeSynopsis.innerText = animeData.animeSynopsis;
 
     // Display buttons
-    if(isOnWatchlist){
-        console.log('is on the list')
-        addToWLBtn.setAttribute('disabled', true)
-        console.log(addToWLBtn)
-    }
-    else{
-        addToWLBtn.setAttribute('disabled', false)
-        console.log(addToWLBtn)
-    }
+    addToWLBtn.setAttribute('disabled', true)
+    console.log(addToWLBtn)
 }
 
 /* Watchlist Manipulation */
@@ -122,7 +115,6 @@ function addToWatchlist(){
         },
         body: JSON.stringify(animeDetails)
     })
-    .then((response) => response.json()).then((data) => console.log(data))
 
     populateWatchlist();
 }
