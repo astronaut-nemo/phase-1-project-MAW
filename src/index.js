@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch Cowboy Bebop and display on site load
     // fetchFromJikan('https://api.jikan.moe/v4/anime/1')
 
-    fetchFromLocal('http://localhost:3000/watchlist/1')
+    fetchFromLocal('http://localhost:3000/watchlist/2')
 })
 
 /* FETCH REQUESTS */
@@ -31,8 +31,7 @@ function fetchFromLocal(URL){
     .then((data) => displayFromLocalOnCard(data));
 }
 
-
-/* DOM Manipulation*/
+/* DOM MANIPULATION*/
 // Display Card Manipulation
 function displayFromJikanOnCard(animeData){
     // console.log(animeData)
