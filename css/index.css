@@ -54,7 +54,7 @@ body{
 
 .search-bar-header{
     padding-top: 80px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -170,7 +170,7 @@ body{
 }
 
 /* ACTION BUTTONS */
-#add-btn, #remove-btn, #comment-btn, #random-btn, #search-btn{
+#add-btn, #remove-btn, #comment-btn{
     /* display: flex; */
     padding: 10px;
     margin: 5px;
@@ -194,9 +194,26 @@ body{
     color: #fdfdfd;
 }
 
+#random-btn, #search-btn{
+    height: 100%
+}
+
+#search-btn{
+    background-color: #a7a7a7;
+    color: #151515;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#search-btn:hover{
+    background-color: #9a66dd;
+    color: #fdfdfd;
+}
+
 #random-btn{
     background-color: #5a2a99;
     color: #fdfdfd;
+    margin-left: 20px;
+    width: 150px;
 }
 #random-btn:hover{
     background-color: #9a66dd;
