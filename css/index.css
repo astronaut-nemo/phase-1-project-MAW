@@ -129,10 +129,15 @@ body{
     width: fit-content;
     height: fit-content;
 }
+
+.poster img{
+    width: auto;
+    height: 500px;
+    border-color: #060606 !important;
+}
 /* Not working for some reason
 #anime-poster{
-    border-width: 20px !important;
-    border-color: #060606 !important;
+    
 } */
 
 /* RHS OF DISPLAY CARD */
