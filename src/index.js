@@ -1,7 +1,15 @@
+// Global Variables
+let isOnWatchlist = false;
+const addToWLBtn = document.getElementById('add-btn');
+
+// DOM Content Loaded
 document.addEventListener('DOMContentLoaded', () => {
     /* Event Listeners */
+    
+    addToWLBtn.addEventListener('click', () => addToWatchlist());
 
     /* Fetch Commands */
+    // Fetch Cowboy Bebop and display on site load
     fetch('https://api.jikan.moe/v4/anime/1')
     .then((response) => response.json())
     .then((data) => displayOnCard(data.data));
@@ -9,8 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* DOM Manipulation*/
+// Display Card Manipulation
 function displayOnCard(animeData){
-    console.log(animeData.images.jpg.small_image_url)
+    // console.log(animeData)
     /* POSTER SIDE */
     // Set #anime-poster
     const animePoster = document.getElementById('anime-poster');
@@ -20,6 +29,7 @@ function displayOnCard(animeData){
     // Set #title
     const animeTitle = document.getElementById('title');
     animeTitle.innerText = animeData.title_english;
+    animeTitle.setAttribute('alt', animeData.mal_id);
 
     // Set #jap-title
     const animeJapTitle = document.getElementById('jap-title');
@@ -30,10 +40,37 @@ function displayOnCard(animeData){
     animeSynopsis.innerText = animeData.synopsis;
 }
 
+// Watchlist Manipulation
+function populateWatchlist(){
+    // Check db.json and update each list item based on the watchlist content
+}
+
 function addToWatchlist(){
+    // POST request to local server
+
+    // Create list item
+    // Create list item that uses the CSS selectors and has the structure of a list item
+    const listItem = document.createElement('li');
+
+    listItem.setAttribute('class', 'item active');
+    listItem.innerText = document.getElementById('title').innerText;
+    // listItem.innerText = capitaliseFirstLetter(document.getElementById('title').innerText);
+
+    (document.getElementById('watchlist')).appendChild(listItem);
+    isOnWatchlist = true;
+}
+
+// Capitalise only the first letter of every word in the title
+// function capitaliseFirstLetter(string){
+//     const capitalisedString = string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
+//     return capitalisedString;
+// }
+
+// Comments Manipulation
+function createComment(){
     // Create list item that uses the CSS selectors and has the structure of a list item
 }
 
-function createComment(){
-    // Create list item that uses the CSS selectors and has the structure of a list item
+function deleteComment(){
+    // Delete comment and its parent node
 }
