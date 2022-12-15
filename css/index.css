@@ -32,10 +32,10 @@ body{
 .site-title{
     padding-top: 20px;
     color: #fdfdfd;
-    font-family: 'Roboto';
+    font-family: 'Secular One', sans-serif;
     font-style: normal;
-    font-size: 36px;
-    font-weight: 900;
+    font-size: 48px;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
 }
