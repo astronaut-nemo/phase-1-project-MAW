@@ -66,7 +66,11 @@ body{
 #search-results{
     padding: 20px;
     display: inline-block;
-    /* display: none; */
+    display: none;
+}
+
+#search-results img{
+    max-width: 150px;
 }
 
 /* BODY */
@@ -131,14 +135,10 @@ body{
 }
 
 .poster img{
-    width: auto;
-    height: 500px;
+    height: auto;
+    width: 350px;
     border-color: #060606 !important;
 }
-/* Not working for some reason
-#anime-poster{
-    
-} */
 
 /* RHS OF DISPLAY CARD */
 .right-side{
