@@ -7,11 +7,16 @@ const removeFromWLBtn = document.getElementById('remove-btn');
 /* INITIAL RENDER */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('page loaded')
+    /* Get Elements*/
+    const searchBtn = document.getElementById('search-btn')
 
     /* Event Listeners */
-    document.getElementById('random-btn').addEventListener('click', () => fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw'))
+    document.getElementById('random-btn').addEventListener('click', () => fetchFromJikan('https://api.jikan.moe/v4/random/anime?q=&sfw'));
+
+    searchBtn.addEventListener('click', ()=> searchAnime());
     addToWLBtn.addEventListener('click', () => addToWatchlist());
-    removeFromWLBtn.addEventListener('click', () => removeFromWatchlist());    
+    removeFromWLBtn.addEventListener('click', () => removeFromWatchlist());
+      
 
     disableWatchlistItems();
     populateWatchlist();
@@ -26,6 +31,12 @@ function fetchFromJikan(URL){
     fetch(URL)
     .then((response) => response.json())
     .then((data) => displayFromJikanOnCard(data.data));
+}
+
+function searchJikan(input){
+    fetch(`https://api.jikan.moe/v4/anime?q=${input}&sfw&limit=5`)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
 
 function fetchFromLocal(URL){
@@ -45,6 +56,13 @@ function deleteFromLocal(id){
     })
 }
 
+
+/* EVENT HANDLERS */ 
+function searchAnime(){
+    const searchInput = document.getElementById('search-input').value;
+    console.log(searchInput)
+    // searchAnime(searchInput);
+}
 
 /* DOM MANIPULATION*/
 /* Display Card Manipulation */
@@ -140,7 +158,7 @@ function removeFromWatchlist(){
 
     // Delete Request
     deleteFromLocal(deleteId);
-    // populateWatchlist();
+    populateWatchlist();
 }
 
 function createWatchlistItem(anime){

@@ -127,11 +127,12 @@ body{
 #anime-info{
     display: flex;
     justify-content: center;
+    width:fit-content;
 }
 
 /* LHS OF DISPLAY CARD */
-#anime-info .poster{
-    padding-right: 20px;
+.poster{
+    margin-right: 20px;
     width: fit-content;
     height: fit-content;
 }
@@ -139,6 +140,7 @@ body{
 .poster img{
     height: auto;
     width: 350px;
+    max-width: 100%;
     border-color: #060606 !important;
 }
 
