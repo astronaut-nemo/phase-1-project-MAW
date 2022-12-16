@@ -18,11 +18,14 @@
 
 ## BDD
     As a user, I will be able to:
-    - 
+    - Display a random anime on the card.
+    - Add an anime to my watchlist.
+    - Remove an anime from my watchlist.
+    - Click and view anime from my watchlist.
 
     
     <!-- Not Yet Implemented
-    - 
+    - Search for specific anime.
     -->
 
 ## Live Link

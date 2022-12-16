@@ -91,6 +91,8 @@ function displayFromJikanOnCard(animeData){
     addToWLBtn.style.display = "";
     removeFromWLBtn.style.display = "none";
 
+    disableWatchlistItems();
+
 }
 
 function displayFromLocalOnCard(animeData){
